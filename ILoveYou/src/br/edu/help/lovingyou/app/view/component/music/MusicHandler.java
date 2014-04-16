@@ -151,7 +151,9 @@ public class MusicHandler {
 	 * 
 	 */
 	public void release() {
-		mediaPlayer.release();
+		if (mediaPlayer != null) {
+			mediaPlayer.release();
+		}
 	}
 	
 	private static MusicHandler instance;
