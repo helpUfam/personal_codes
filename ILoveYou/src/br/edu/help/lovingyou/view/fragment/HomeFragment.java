@@ -18,6 +18,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import br.edu.help.lovingyou.R;
@@ -79,6 +80,13 @@ public class HomeFragment extends Fragment implements HomeFragmentView {
 		curlView.setAllowLastPageCurl(false);
 		
 		return mainView;
+	}
+	
+	/** {@inheritDoc} **/
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		
+		return super.onOptionsItemSelected(item);
 	}
 	
 	/**

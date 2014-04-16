@@ -2,20 +2,29 @@ package br.edu.help.lovingyou;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import br.edu.help.lovingyou.app.view.adapters.SizeChangeObserver;
+import android.view.animation.Animation;
+import android.view.animation.Animation.AnimationListener;
+import android.view.animation.AnimationUtils;
+import android.widget.FrameLayout;
+import android.widget.ImageView;
+import android.widget.RelativeLayout.LayoutParams;
 import br.edu.help.lovingyou.app.view.component.CurlView;
 import br.edu.help.lovingyou.app.view.component.music.MusicHandler;
 import br.edu.help.lovingyou.view.MainActivityViewImpl;
+import br.edu.help.lovingyou.view.fragment.AboutUsFragment;
+import br.edu.help.lovingyou.view.fragment.AboutYouFragment;
 import br.edu.help.lovingyou.view.fragment.HomeFragment;
 import br.edu.help.lovingyou.view.fragment.NavigationDrawerFragment;
 
@@ -31,12 +40,13 @@ public class MainActivity extends ActionBarActivity implements
 	
 	private final int FADE_TIME = 1000;
 	
-	
 	/**
 	 * Fragment managing the behaviors, interactions and presentation of the
 	 * navigation drawer.
 	 */
 	private NavigationDrawerFragment mNavigationDrawerFragment;
+	
+	private Animation moveUp, moveup2;
 
 	/**
 	 * Used to store the last screen title. For use in
@@ -49,6 +59,8 @@ public class MainActivity extends ActionBarActivity implements
 	protected void onCreate(final Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
+		moveUp = AnimationUtils.loadAnimation(this, R.anim.move_up);
+		moveup2 = AnimationUtils.loadAnimation(this, R.anim.move_up);
 		
 		musicManagerHandler = new MusicHandler(getApplicationContext());//MusicHandler.newInstance(getApplicationContext());// 
 		
@@ -87,6 +99,64 @@ public class MainActivity extends ActionBarActivity implements
 		super.onResume();
 	}
 	
+	/** {@inheritDoc} **/
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		if (item.getItemId() == R.id.heart_animation) {
+        	startHeartAnimation();
+            return true;
+        }
+		return super.onOptionsItemSelected(item);
+	}
+	
+	/**
+	 * 
+	 */
+	private void startHeartAnimation() {
+		
+		final ImageView myAnimationRight = new ImageView(this);
+        FrameLayout.LayoutParams paramsImage = new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        paramsImage.gravity = Gravity.RIGHT;
+        myAnimationRight.setImageResource(R.drawable.some_hearts);
+        addContentView(myAnimationRight, paramsImage);
+        
+		final ImageView myAnimationLeft = new ImageView(this);
+        FrameLayout.LayoutParams paramsImage2 = new FrameLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
+        paramsImage2.gravity = Gravity.LEFT;
+        myAnimationLeft.setImageResource(R.drawable.some_hearts);
+        addContentView(myAnimationLeft, paramsImage2);
+        myAnimationLeft.setVisibility(View.GONE);
+        moveUp.setAnimationListener(new AnimationListener() {
+			
+			@Override
+			public void onAnimationStart(Animation animation) {
+				
+				Handler handler = new Handler();
+				Runnable run = new Runnable() {
+					
+					@Override
+					public void run() {
+						myAnimationLeft.startAnimation(moveup2);
+				        myAnimationLeft.setVisibility(View.VISIBLE);
+					}
+				};
+				handler.postDelayed(run, 1500);
+			}
+			
+			@Override
+			public void onAnimationRepeat(Animation animation) {
+				
+			}
+			
+			@Override
+			public void onAnimationEnd(Animation animation) {
+				myAnimationRight.startAnimation(moveUp);
+			}
+		});
+        myAnimationRight.startAnimation(moveUp);
+	}
+
+	
 	
 	/** {@inheritDoc} **/
 	@Override
@@ -102,14 +172,14 @@ public class MainActivity extends ActionBarActivity implements
 		case 1:
 			fragmentManager
 					.beginTransaction()
-					.replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+					.replace(R.id.container, AboutYouFragment.newInstance(null))
 					.commit();
 			break;
 
 		case 2:
 			fragmentManager
 					.beginTransaction()
-					.replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+					.replace(R.id.container, AboutUsFragment.newInstance(null))
 					.commit();
 			break;
 
@@ -163,18 +233,18 @@ public class MainActivity extends ActionBarActivity implements
 		return super.onCreateOptionsMenu(menu);
 	}
 
-	/** {@inheritDoc} **/
-	@Override
-	public boolean onOptionsItemSelected(final MenuItem item) {
-		// Handle action bar item clicks here. The action bar will
-		// automatically handle clicks on the Home/Up button, so long
-		// as you specify a parent activity in AndroidManifest.xml.
-		final int id = item.getItemId();
-		if (id == R.id.action_settings) {
-			return true;
-		}
-		return super.onOptionsItemSelected(item);
-	}
+//	/** {@inheritDoc} **/
+//	@Override
+//	public boolean onOptionsItemSelected(final MenuItem item) {
+//		// Handle action bar item clicks here. The action bar will
+//		// automatically handle clicks on the Home/Up button, so long
+//		// as you specify a parent activity in AndroidManifest.xml.
+//		final int id = item.getItemId();
+//		if (id == R.id.action_settings) {
+//			return true;
+//		}
+//		return super.onOptionsItemSelected(item);
+//	}
 
 	/**
 	 * A placeholder fragment containing a simple view.
@@ -188,9 +258,6 @@ public class MainActivity extends ActionBarActivity implements
 
 		/** The curl view. */
 		static CurlView curlView;
-
-		/** The size change observer. */
-		private SizeChangeObserver sizeChangeObserver;
 
 		/**
 		 * Returns a new instance of this fragment for the given section number.

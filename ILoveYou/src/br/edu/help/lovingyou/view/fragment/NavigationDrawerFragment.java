@@ -22,7 +22,6 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.Toast;
 import br.edu.help.lovingyou.R;
 import br.edu.help.lovingyou.view.MainActivityViewImpl;
 
@@ -257,7 +256,7 @@ public class NavigationDrawerFragment extends Fragment implements OnClickListene
         // If the drawer is open, show the global app actions in the action bar. See also
         // showGlobalContextActionBar, which controls the top-left area of the action bar.
         if (mDrawerLayout != null && isDrawerOpen()) {
-            inflater.inflate(R.menu.global, menu);
+//            inflater.inflate(R.menu.global, menu);
             showGlobalContextActionBar();
         }
         super.onCreateOptionsMenu(menu, inflater);
@@ -268,9 +267,8 @@ public class NavigationDrawerFragment extends Fragment implements OnClickListene
         if (mDrawerToggle.onOptionsItemSelected(item)) {
             return true;
         }
-
-        if (item.getItemId() == R.id.action_example) {
-            Toast.makeText(getActivity(), "Example action.", Toast.LENGTH_SHORT).show();
+        if (item.getItemId() == R.id.heart_animation) {
+//        	startHeartAnimation();
             return true;
         }
 

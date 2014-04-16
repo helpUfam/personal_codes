@@ -103,11 +103,14 @@ public class MusicHandler {
 						updateVolume(-1);
 						if (iVolume == INT_VOLUME_MIN) {
 							inEffect = false;
-							// Pause music
-							if (mediaPlayer.isPlaying())
-								mediaPlayer.pause();
-							timer.cancel();
-							timer.purge();
+							try {
+								// Pause music
+								if (mediaPlayer.isPlaying())
+									mediaPlayer.pause();
+								timer.cancel();
+								timer.purge();
+							} catch (Exception e) { e.printStackTrace(); }
+							
 						}
 					}
 				};
@@ -143,8 +146,12 @@ public class MusicHandler {
 			fVolume = FLOAT_VOLUME_MIN;
 		else if (fVolume > FLOAT_VOLUME_MAX)
 			fVolume = FLOAT_VOLUME_MAX;
-
-		mediaPlayer.setVolume(fVolume, fVolume);
+		try {
+			mediaPlayer.setVolume(fVolume, fVolume);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	/**
