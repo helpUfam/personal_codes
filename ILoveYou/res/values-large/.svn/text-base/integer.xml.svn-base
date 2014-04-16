@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <integer name="columns">4</integer>
+    <integer name="max_rows_obj">12</integer>
+    <integer name="object1">@drawable/object1</integer>
+    <integer name="object2">@drawable/object2</integer>
+    <integer name="object3">@drawable/object3</integer>
+    <integer name="object4">@drawable/object4</integer>
+    <integer name="object5">@drawable/object5</integer>
+    <integer name="object6">@drawable/object6</integer>
+
+</resources>

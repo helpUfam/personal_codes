@@ -1,0 +1,110 @@
+<resources>
+
+    <color name="color_title">#5d3608</color>
+  	<!-- Edit Text Padding -->
+    <dimen name="editTextPadding">10dp</dimen>
+    
+    <!-- Tabs -->
+    <dimen name="topTabs">3dp</dimen>
+    <dimen name="sideTabs">2dp</dimen>
+    <dimen name="buttonTabHeight">40dp</dimen>
+    <dimen name="buttonTabWidth">90dp</dimen>
+    <dimen name="buttonTabWidthRegister">127dp</dimen>
+    <dimen name="buttonTabTop">7dp</dimen>
+    <dimen name="buttonTabRight">15dp</dimen>
+    
+    <!-- Linear densitys -->
+    <dimen name="linearLoginPainelHeight">500dp</dimen>
+    <dimen name="linearLoginPainelWidth">440dp</dimen>
+    <dimen name="linearLoginPainelTop">100dp</dimen>
+    <dimen name="linearLoginPainelBottom">0dp</dimen>
+    <dimen name="linearLoginPainelSide">330dp</dimen>
+    <dimen name="linearTextUserInfoTop">30dp</dimen>
+    <dimen name="linearTextUserInfoWidth">440dp</dimen>
+    <dimen name="linearTextUserInfoSide">330dp</dimen>
+    <dimen name="linearLoginRegisterHeight">270dp</dimen>
+    <dimen name="linearLoginRegisterTop">30dp</dimen>
+    <dimen name="linearRegisterEditNameTop">45dp</dimen>
+    <dimen name="linearActionsButtonsTop">10dp</dimen>
+    <dimen name="linearActionsButtonsBottom">45dp</dimen>
+	<dimen name="linearLoginEditTop">50dp</dimen>
+    <dimen name="linearRegisterEditTop">10dp</dimen>
+    <dimen name="linearRegisterRequiredRight">20dp</dimen>
+    
+        <!-- Font for toast (Notifications) -->
+    <dimen name="fontSize">17dp</dimen>
+    
+    <!-- Text size densitys -->
+    <dimen name="texSize10">10.67dp</dimen>
+    <dimen name="texSize11">11.33dp</dimen>
+    <dimen name="texSize12">12dp</dimen>
+    <dimen name="texSize13">13dp</dimen>
+    <dimen name="texSize14">14dp</dimen>
+    <dimen name="texSize15">15dp</dimen>
+    <dimen name="texSize16">16dp</dimen>
+    <dimen name="texSize20">20dp</dimen>
+    <dimen name="texSize13dp">13dp</dimen>
+    <dimen name="texSize12dp">12dp</dimen>
+    
+    <!-- EditText densitys -->
+    <dimen name="editTextHeight">0dp</dimen>
+    <dimen name="editTextWidth">390dp</dimen>
+    <dimen name="editTextMinWidth">180dp</dimen>
+    
+    <!-- EditText spaces densitys -->
+    <dimen name="editTextLoginSpace">10dp</dimen>
+    <dimen name="editTextRegisterSpace">10dp</dimen>
+    
+    <!-- Texts-->
+    <dimen name="textInfoLeft">50dp</dimen>
+    <dimen name="textInfoRight">17dp</dimen>
+    <dimen name="titleTop">15dp</dimen>
+    <dimen name="titleLeft">15dp</dimen>
+    <dimen name="requiredFieldRight">25dp</dimen>
+    <dimen name="textForgotPasswordSpace">60dp</dimen>
+    <dimen name="textForgotPasswordLeft">60dp</dimen>
+    
+    <!-- Buttons-->
+    <dimen name="buttonHeight">53dp</dimen>
+    <dimen name="buttonWidth">100dp</dimen>
+    <dimen name="buttonForgotPasswordLayoutHeight">40dp</dimen>
+    <dimen name="buttonForgotPasswordLayoutWidth">72dp</dimen>
+    <dimen name="buttonForgotPasswordWidth">100dp</dimen>
+    <dimen name="buttonMarginMiddle">5dp</dimen>
+    <dimen name="buttonMarginSide">30dp</dimen>
+    
+    <!-- Advertisement-->
+    <dimen name="adPadding">2dp</dimen>
+    <dimen name="advertisementWidth">638dp</dimen>
+    <dimen name="advertisementHeight">416dp</dimen>
+    
+    <!-- Store -->
+	<dimen name="size_text_description_store">12dp</dimen>
+	<dimen name="size_title_magazine_store">21dp</dimen>
+	<dimen name="size_description_magazine_store">14.5dp</dimen>
+	<dimen name="size_price_magazine_store">27dp</dimen>
+	<dimen name="size_buy_button_text_store">23dp</dimen>
+	<dimen name="width_item_store_left">850dp</dimen>
+	<dimen name="width_buy_magazine_store">96dp</dimen>
+	<dimen name="height_buy_magazine_store">138dp</dimen>
+	<dimen name="width_buy_border_store">90dp</dimen>
+	<dimen name="height_buy_border_store">142dp</dimen>
+	<dimen name="margin_store_border_left">70dp</dimen>
+	<dimen name="margin_store_border_right">26dp</dimen>
+	<dimen name="margin_store_border_bottom">15dp</dimen>
+	<dimen name="margin_store_border_top">21dp</dimen>
+	<dimen name="margin_store_image_bottom">15dp</dimen>
+	<dimen name="margin_store_description_bottom">28dp</dimen>
+	<dimen name="margin_store_title_bottom">8dp</dimen>
+	<dimen name="margin_store_side_width">50dp</dimen>
+	<dimen name="margin_extra_text_on_magazine_width">27dp</dimen>
+	<dimen name="width_buy_button_store">230dp</dimen>
+	<dimen name="height_buy_button_store">70dp</dimen>
+	<dimen name="margin_button_price_right">22dp</dimen>
+	<dimen name="margin_white_space">32dp</dimen>
+	<dimen name="grid_item_width">254dp</dimen>
+	<dimen name="height_extras_texts_on_magazine">89dp</dimen>
+	<dimen name="maginTopOnStore">80dp</dimen>
+	<dimen name="verticalSpaceOnStore">0dp</dimen>
+    
+</resources>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Amando Anne Caroline de Paula</string>
+    <string name="title_section1">Eu e você</string>
+    <string name="title_section2">Sobre você</string>
+    <string name="title_section3">Sobre nós</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+    <string name="love_of_my_life_text">Amor da minha vida *-*</string>
+    <string name="coulple_symbol_text">&lt;H&amp;A3</string>
+    <string-array name="images"> 
+    	<item>png</item>
+    	<item>jpg</item>
+    	<item>jpeg</item>
+    	<item>gif</item>    
+	</string-array>
+
+</resources>

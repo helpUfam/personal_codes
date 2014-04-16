@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:gravity="center_horizontal"
+    android:background="#B2DFEE">
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="@string/love_of_my_life_text"
+        android:textColor="#1616F6"/>
+    
+    <TextView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="30sp"
+        android:text="@string/coulple_symbol_text"
+        android:textColor="#080897"/>
+    
+    <br.edu.help.lovingyou.app.view.component.curl.CurlView 
+   	    android:layout_width="match_parent"
+   	    android:layout_height="match_parent"
+   	    android:id="@+id/curl_view"
+   	    android:background="@android:color/transparent"
+   	    android:layout_marginBottom="50dp"/>
+    
+</LinearLayout>
